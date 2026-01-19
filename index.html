@@ -7,6 +7,7 @@
 		try {
 			console.log('try');
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			console.log('after language');
 
 			embeddedservice_bootstrap.init(
 				'00D9V00000PyKIS',
@@ -16,6 +17,7 @@
 					scrt2URL: 'https://knf--devfk.sandbox.my.salesforce-scrt.com'
 				}
 			);
+			console.log('after init');
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
