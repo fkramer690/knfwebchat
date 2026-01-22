@@ -12,6 +12,14 @@
 
 		const language = countryCode.str.split("/")[0];
 		console.log('language: ' + language);
+
+
+		embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+  			countryCode: countryCode,
+  			//Hidden2: "value two",
+  			//Hidden3: "value three",
+  			//Hidden4: "value four",
+			});
 		
 		embeddedservice_bootstrap.settings.language = language; // For example, enter 'en' or 'en-US'
 
