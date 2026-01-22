@@ -5,8 +5,16 @@
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 
-		const url = window.location.href;
-		console.log(url);
+		const url = new URL(window.location.href);
+		
+		const countryCode = url.searchParams.get("countryCode");
+		console.log('countryCode: ' + countryCode);
+
+		const language = countryCode.str.split("/")[0];
+		console.log('language: ' + language);
+		
+		embeddedservice_bootstrap.settings.language = language; // For example, enter 'en' or 'en-US'
+
 		
 		try {
 				embeddedservice_bootstrap.init(
