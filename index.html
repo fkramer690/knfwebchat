@@ -13,23 +13,24 @@
 		const language = countryCode.split("/")[0];
 		console.log('language: ' + language);
 
-
-		embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-  			countryCode: countryCode
+		try {
+			embeddedservice_bootstrap.settings.language = language; // For example, enter 'en' or 'en-US'
+	
+			window.addEventListener("onEmbeddedMessagingReady", () => {  
+				
+				console.log( "Inside Prechat API!!" );
+				
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ "countryCode": countryCode});
 			});
 		
-		embeddedservice_bootstrap.settings.language = language; // For example, enter 'en' or 'en-US'
-
-		
-		try {
-				embeddedservice_bootstrap.init(
+			embeddedservice_bootstrap.init(
 				'00D9V00000PyKIS',
 				'MyDomain',
 				'https://knf--devfk.sandbox.my.site.com/ESWMyDomain1768831871960',
 				{
 					scrt2URL: 'https://knf--devfk.sandbox.my.salesforce-scrt.com'
 				}
-			);
+		);
 		} catch (err) {
 			console.log('error');
 			console.error('Error loading Embedded Messaging: ', err);
