@@ -10,7 +10,7 @@
 		const countryCode = url.searchParams.get("countryCode");
 		console.log('countryCode: ' + countryCode);
 
-		const language = countryCode.str.split("/")[0];
+		const language = countryCode.split("/")[0];
 		console.log('language: ' + language);
 
 
