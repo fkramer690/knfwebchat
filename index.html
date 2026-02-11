@@ -5,6 +5,10 @@
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 
+		console.log('before Cookie');
+		console.log(document.cookie);
+		console.log('after Cookie');
+
 		const url = new URL(window.location.href);
 		
 		const countryCode = url.searchParams.get("countryCode");
