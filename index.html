@@ -1,47 +1,18 @@
 <html>
 
-	Headline HIIII 
-	
-<script type='text/javascript'>
-	function initEmbeddedMessaging() {
+	Headline Agentforce v1
 
-		console.log('before Cookie');
-		document.cookie = "testcookie=123";
-		console.log(document.cookie);
-		console.log('after Cookie');
-
-		const url = new URL(window.location.href);
-		
-		const countryCode = url.searchParams.get("countryCode");
-		console.log('countryCode: ' + countryCode);
-
-		const language = countryCode.split("/")[0];
-		console.log('language: ' + language);
-
-		try {
-			embeddedservice_bootstrap.settings.language = language; // For example, enter 'en' or 'en-US'
-	
-			window.addEventListener("onEmbeddedMessagingReady", () => {  
-				
-				console.log( "Inside Prechat API!!" );
-				
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ "countryCode": countryCode});
-			});
-		
-			embeddedservice_bootstrap.init(
-				'00D9V00000PyKIS',
-				'GitHubChannel',
-				'https://knf--devfk.sandbox.my.site.com/ESWGitHubChannel1780651505291',
-				{
-					scrt2URL: 'https://knf--devfk.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.log('error');
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
+<script type='text/javascript' 
+             id='init-agentforce-messaging' 
+             src='https://test-service.force.com/embeddedservice/agentforcemessaging/0.3/init.js' 
+             onload='agentforce_messaging.init({
+                    siteUrl: "knf--devfk.sandbox.my.site.com/ESWGitHubChannel1780651505291vforcesite",
+                    agentApiConfiguration: {
+                        agentId: "0Xx9V0000008wlBSAQ", 
+                        domainUrl: "https://knf--devfk.sandbox.my.salesforce.com"
+                    },
+                    uiConfiguration: {}
+            });'>
 </script>
-<script type='text/javascript' src='https://knf--devfk.sandbox.my.site.com/ESWMyDomain1768831871960/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </html>
