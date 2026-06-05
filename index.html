@@ -1,14 +1,16 @@
 <html>
 <head>
-    <title>Headline Agentforce v4</title>
+    <title>Headline Agentforce v5</title>
 </head>
 <body>
 
-<h1>Headline Agentforce v4</h1>
+<h1>Headline Agentforce v5</h1>
 
 <script>
 function initAgentforce() {
+    console.log('before try');
     try {
+        console.log('in try');
         if (typeof agentforce_messaging === 'undefined') {
             throw new Error('agentforce_messaging is not available');
         }
@@ -19,6 +21,7 @@ function initAgentforce() {
                 agentId: "0Xx9V0000008wlBSAQ",
                 domainUrl: "https://knf--devfk.sandbox.my.salesforce.com"
             },
+            console.log('in init');
             uiConfiguration: {}
         });
 
