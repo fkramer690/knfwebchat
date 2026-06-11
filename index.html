@@ -1,43 +1,18 @@
 <html>
-<head>
-    <title>Headline Agentforce v6</title>
-</head>
-<body>
 
-<h1>Headline Agentforce v6</h1>
+	Headline Agentforce v1
 
-<script>
-function initAgentforce() {
-    console.log('before try');
-    try {
-        console.log('in try');
-        if (typeof agentforce_messaging === 'undefined') {
-            throw new Error('agentforce_messaging is not available');
-        }
-
-        agentforce_messaging.init({
-            siteUrl: "https://knf--devfk.sandbox.my.site.com/AFMAgentforceCaseMTest1780660978697",
-            agentApiConfiguration: {
-                agentId: "0Xx9V0000008wlBSAQ",
-                domainUrl: "https://knf--devfk.sandbox.my.salesforce.com"
-            },
-            uiConfiguration: {}
-        });
-
-        console.log('Agentforce initialized successfully');
-    } catch (error) {
-        console.error('Agentforce initialization failed:', error);
-    }
-}
+<script type='text/javascript' 
+             id='init-agentforce-messaging' 
+             src='https://test-service.force.com/embeddedservice/agentforcemessaging/0.3/init.js' 
+             onload='agentforce_messaging.init({
+                    siteUrl: "knf--devfk.sandbox.my.site.com/ESWGitHubChannel1780651505291vforcesite",
+                    agentApiConfiguration: {
+                        agentId: "0Xx9V0000008wlBSAQ", 
+                        domainUrl: "https://knf--devfk.sandbox.my.salesforce.com"
+                    },
+                    uiConfiguration: {}
+            });'>
 </script>
 
-<script
-    type="text/javascript"
-    id="init-agentforce-messaging"
-    src="https://test-service.force.com/embeddedservice/agentforcemessaging/0.3/init.js"
-    onload="initAgentforce()"
-    onerror="console.error('Failed to load Agentforce init.js')">
-</script>
-
-</body>
 </html>
