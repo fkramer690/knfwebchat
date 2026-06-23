@@ -1,10 +1,45 @@
 <html>
 
-	Headline Embedded Service Deployment v1.0
+	Headline Embedded Service Deployment v1.1
 
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
+			
+			const segments = window.location.pathname.split('/').filter(Boolean);
+			const lang = segments?.[0] ?? null;
+			const region = segments?.[1] ?? null;
+			console.log(lang);
+			console.log(region);
+
+			const cookieString = document?.cookie || '';
+
+const cookies = cookieString
+  ? Object.fromEntries(
+      cookieString
+        .split('; ')
+        .filter(Boolean)
+        .map(cookie => {
+          const [name, ...value] = cookie.split('=');
+
+          return [
+            name || '(unnamed)',
+            decodeURIComponent(value.join('=') || '')
+          ];
+        })
+    )
+  : {};
+
+if (Object.keys(cookies).length) {
+  console.group('🍪 Cookies');
+  console.table(cookies);
+  console.groupEnd();
+} else {
+  console.warn('🍪 Keine Cookies vorhanden oder auslesbar.');
+}
+
+
+			
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
 			embeddedservice_bootstrap.init(
