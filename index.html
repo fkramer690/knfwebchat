@@ -1,18 +1,26 @@
 <html>
 
-	Headline Agentforce v3
+	Headline Embedded Service Deployment v1.0
 
-<script type='text/javascript' 
-             id='init-agentforce-messaging' 
-             src='https://knf--devfk.sandbox.my.site.com/embeddedservice/agentforcemessaging/0.3/init.js' 
-             onload='agentforce_messaging.init({
-                    siteUrl: "https://knf--devfk.sandbox.my.site.com/AFMAgentforceCaseMTest1780660978697",
-                    agentApiConfiguration: {
-                        agentId: "0Xx9V0000008wlBSAQ", 
-                        domainUrl: "https://knf--devfk.sandbox.my.salesforce.com"
-                    },
-                    uiConfiguration: {}
-            });'>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D9V00000PyKIS',
+				'GitHubChannel',
+				'https://knf--devfk.sandbox.my.site.com/ESWGitHubChannel1780651505291',
+				{
+					scrt2URL: 'https://knf--devfk.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
 </script>
+<script type='text/javascript' src='https://knf--devfk.sandbox.my.site.com/ESWGitHubChannel1780651505291/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 
 </html>
